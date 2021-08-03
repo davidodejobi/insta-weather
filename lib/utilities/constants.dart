@@ -17,3 +17,17 @@ const kRainDecoration = BoxDecoration(
     Color(0xFF383840),
   ],
 ));
+
+const kSunDecoration = BoxDecoration(
+    gradient: LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomLeft,
+  stops: [
+    0.1,
+    0.7,
+  ],
+  colors: [
+    Color(0xFF737175),
+    Color(0xFF383840),
+  ],
+));

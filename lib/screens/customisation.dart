@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SideMenu extends StatefulWidget {
+class Customization extends StatefulWidget {
   @override
-  _SideMenuState createState() => _SideMenuState();
+  _CustomizationState createState() => _CustomizationState();
 }
 
-class _SideMenuState extends State<SideMenu> {
+class _CustomizationState extends State<Customization> {
   @override
   Widget build(BuildContext context) {
     return Container(

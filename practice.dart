@@ -20,7 +20,29 @@ ShaderMask(
  */
 /*
 
+    // Using switch statement to display desired
+    // widget if any certain condition is met
+    // You are free to use any condition
+    // For simplicity I have used boolean contition
 
+    // switch (checkTemperature) {
+    //   case 21:
+    //     widget = Text(
+    //       'Second Widget',
+    //       style: TextStyle(
+    //         fontSize: 18,
+    //         fontWeight: FontWeight.bold,
+    //       ),
+    //     );
+    //     break;
+    //   case 9:
+    //     widget = Container();
+    //     break;
+    //   default:
+    //     widget = Container();
+    // }
+
+    // Finally returning a Widget
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

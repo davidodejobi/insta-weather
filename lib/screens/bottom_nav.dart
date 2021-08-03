@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:weather_daily/screens/side_menu.dart';
 import 'package:weather_daily/screens/weather_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:weather_daily/utilities/constants.dart';
+
+import 'customisation.dart';
 
 class BottomNavControl extends StatefulWidget {
   const BottomNavControl({Key? key}) : super(key: key);
@@ -17,8 +18,7 @@ class _BottomNavControlState extends State<BottomNavControl> {
   static List<Widget> _widgetOptions = <Widget>[
     SideMenu(),
     WeatherScreen(),
-    Text('Profile Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    Customization(),
   ];
 
   void _onItemTapped(int index) {
