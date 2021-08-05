@@ -16,7 +16,8 @@ class BottomScrollingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        left: 20,
+        left: 10,
+        right: 10,
       ),
       height: 100,
       width: 170,

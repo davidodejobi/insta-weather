@@ -14,7 +14,7 @@ class BottomNavControl extends StatefulWidget {
 }
 
 class _BottomNavControlState extends State<BottomNavControl> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   static List<Widget> _widgetOptions = <Widget>[
     SideMenu(),
     WeatherScreen(),
