@@ -1,10 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:video_player/video_player.dart';
 import 'package:weather_daily/screens/weather_screen.dart';
+import 'package:weather_daily/services/api_key.dart';
+import 'package:weather_daily/services/location.dart';
+import 'package:weather_daily/services/networking.dart';
 import 'package:weather_daily/services/weather.dart';
-
 import 'bottom_nav.dart';
+import 'package:http/http.dart' as http;
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -13,6 +17,7 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
   late VideoPlayerController _controller;
+
   @override
   void initState() {
     super.initState();
@@ -26,6 +31,18 @@ class _LoadingScreenState extends State<LoadingScreen> {
         // Ensure the first frame is shown after the video is initialized.
         setState(() {});
       });
+  }
+
+  void getData() async {
+    WeatherModel weatherModel = WeatherModel();
+
+    var weatherData = await weatherModel.getWeatherData();
+
+    Navigator.push(context, MaterialPageRoute(builder: (_) {
+      return BottomNavControl(
+        locationWeather: weatherData,
+      );
+    }));
   }
 
   @override
@@ -46,8 +63,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           Center(
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => BottomNavControl()));
+                  getData();
                 },
                 child: Text('Next Page')),
           )

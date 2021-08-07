@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'bottom_scrolling_card.dart';
+import 'constants.dart';
 
 class InfoScrollable extends StatelessWidget {
   @override
@@ -9,7 +10,8 @@ class InfoScrollable extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.only(top: 20),
-      height: size.height * 0.20,
+      // height: size.height * 0.20,
+      color: kScaffoldBackgroundColor,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
