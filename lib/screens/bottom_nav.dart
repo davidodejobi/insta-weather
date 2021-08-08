@@ -42,20 +42,20 @@ class _BottomNavControlState extends State<BottomNavControl> {
   }
 
   void updateUI(dynamic weatherData) {
-    var temperature = weatherData['main']['temp'];
+    double temperature = weatherData['main']['temp'];
     temp = temperature.toInt();
     condition = weatherData['weather'][0]['id'];
     icon = weatherModel.getWeatherIcon(condition);
 
     cityName = weatherData['name'];
-    var temperatureFeels = weatherData['main']['feels_like'];
+    double temperatureFeels = weatherData['main']['feels_like'];
     tempFeel = temperatureFeels.toInt();
     var windSpeed = weatherData['wind']['speed'];
     windySpeed = windSpeed.toInt();
     humidity = weatherData['main']['humidity'];
-    var temperatureMin = weatherData['main']['temp_min'];
+    double temperatureMin = weatherData['main']['temp_min'];
     tempMin = temperatureMin.toInt();
-    var temperatureMax = weatherData['main']['temp_max'];
+    double temperatureMax = weatherData['main']['temp_max'];
     tempMax = temperatureMax.toInt();
     weatherType = weatherData['weather'][0]['main'];
 
@@ -68,6 +68,11 @@ class _BottomNavControlState extends State<BottomNavControl> {
     return [
       SideMenu(),
       WeatherScreen(
+        windSpeed: windySpeed,
+        humidity: humidity,
+        feelsLike: tempFeel,
+        minTemp: tempMin,
+        maxTemp: tempMax,
         widgetCondition: condition,
         icon: icon,
         weatherType: weatherType,

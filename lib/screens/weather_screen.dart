@@ -1,8 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_daily/screens/bottom_nav.dart';
-import 'package:weather_daily/services/location.dart';
-import 'package:weather_daily/services/networking.dart';
 import 'package:weather_daily/utilities/Rain.dart';
 import 'package:weather_daily/utilities/info_scrollable.dart';
 import 'package:weather_daily/utilities/overcast.dart';
@@ -14,8 +10,18 @@ class WeatherScreen extends StatelessWidget {
   final String weatherType;
   final String icon;
   final int widgetCondition;
+  final int minTemp;
+  final int maxTemp;
+  final int humidity;
+  final int feelsLike;
+  final int windSpeed;
 
   WeatherScreen({
+    required this.windSpeed,
+    required this.humidity,
+    required this.feelsLike,
+    required this.maxTemp,
+    required this.minTemp,
     required this.widgetCondition,
     required this.text,
     required this.temp,
@@ -84,7 +90,16 @@ class WeatherScreen extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(flex: 1, child: InfoScrollable()),
+        Expanded(
+          flex: 1,
+          child: InfoScrollable(
+            windSpeed: windSpeed,
+            humidity: humidity,
+            feelsLike: feelsLike,
+            minTemp: minTemp,
+            maxTemp: maxTemp,
+          ),
+        ),
       ],
     );
   }

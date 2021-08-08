@@ -1,14 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:weather_daily/screens/weather_screen.dart';
-import 'package:weather_daily/services/api_key.dart';
-import 'package:weather_daily/services/location.dart';
-import 'package:weather_daily/services/networking.dart';
 import 'package:weather_daily/services/weather.dart';
 import 'bottom_nav.dart';
-import 'package:http/http.dart' as http;
 
 class LoadingScreen extends StatefulWidget {
   @override

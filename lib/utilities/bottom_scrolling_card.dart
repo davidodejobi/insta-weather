@@ -27,11 +27,11 @@ class BottomScrollingCard extends StatelessWidget {
             end: Alignment.centerRight,
             stops: [
               0.0001,
-              0.7,
+              0.99,
             ],
             colors: [
-              Color(0xFF737175),
-              Colors.black12,
+              Color(0xFF706F75),
+              Color(0xFF3A393E),
             ],
           ),
           borderRadius: BorderRadius.circular(5)),

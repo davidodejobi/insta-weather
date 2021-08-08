@@ -5,9 +5,21 @@ import 'bottom_scrolling_card.dart';
 import 'constants.dart';
 
 class InfoScrollable extends StatelessWidget {
+  final int minTemp;
+  final int maxTemp;
+  final int feelsLike;
+  final int humidity;
+  final int windSpeed;
+
+  InfoScrollable({
+    required this.windSpeed,
+    required this.humidity,
+    required this.maxTemp,
+    required this.minTemp,
+    required this.feelsLike,
+  });
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.only(top: 20),
       // height: size.height * 0.20,
@@ -19,22 +31,27 @@ class InfoScrollable extends StatelessWidget {
             BottomScrollingCard(
               heading: 'TEMP',
               icon: FontAwesomeIcons.minus,
-              info: '20 - 26°C',
+              info: '$minTemp°C - $maxTemp°C',
             ),
             BottomScrollingCard(
-              heading: 'TEMP',
-              icon: FontAwesomeIcons.minus,
-              info: '20 - 26°C',
+              heading: 'FEELS LIKE',
+              icon: FontAwesomeIcons.grinBeamSweat,
+              info: '$feelsLike°C',
             ),
             BottomScrollingCard(
-              heading: 'TEMP',
+              heading: 'HUMIDITY',
               icon: FontAwesomeIcons.minus,
-              info: '20 - 26°C',
+              info: '$humidity %',
             ),
             BottomScrollingCard(
-              heading: 'TEMP',
+              heading: 'WIND SPEED',
               icon: FontAwesomeIcons.minus,
-              info: '20 - 26°C',
+              info: '$windSpeed',
+            ),
+            BottomScrollingCard(
+              heading: 'WIND SPEED',
+              icon: FontAwesomeIcons.minus,
+              info: '$windSpeed',
             ),
           ],
         ),

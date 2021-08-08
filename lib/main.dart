@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_daily/screens/bottom_nav.dart';
 import 'package:weather_daily/screens/loading_screen.dart';
 import 'package:weather_daily/services/location.dart';
 import 'package:weather_daily/utilities/constants.dart';
-import 'package:flutter/services.dart';
 
 Location location = Location();
 

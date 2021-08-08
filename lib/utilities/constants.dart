@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:weather_daily/services/api_key.dart';
 
 const kScaffoldBackgroundColor = Color(0xFF383840);
 
