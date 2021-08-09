@@ -58,7 +58,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 onPressed: () {
                   getData();
                 },
-                child: Text('Next Page')),
+                child: Text('Get Weather')),
           )
         ],
       ),

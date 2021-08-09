@@ -50,7 +50,7 @@ class _BottomNavControlState extends State<BottomNavControl> {
     cityName = weatherData['name'];
     double temperatureFeels = weatherData['main']['feels_like'];
     tempFeel = temperatureFeels.toInt();
-    var windSpeed = weatherData['wind']['speed'];
+    double windSpeed = weatherData['wind']['speed'];
     windySpeed = windSpeed.toInt();
     humidity = weatherData['main']['humidity'];
     double temperatureMin = weatherData['main']['temp_min'];
@@ -66,7 +66,7 @@ class _BottomNavControlState extends State<BottomNavControl> {
 
   List<Widget> _buildScreens() {
     return [
-      SideMenu(),
+      WeatherTipScreen(),
       WeatherScreen(
         windSpeed: windySpeed,
         humidity: humidity,

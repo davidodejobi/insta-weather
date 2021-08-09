@@ -48,11 +48,6 @@ class InfoScrollable extends StatelessWidget {
               icon: FontAwesomeIcons.minus,
               info: '$windSpeed',
             ),
-            BottomScrollingCard(
-              heading: 'WIND SPEED',
-              icon: FontAwesomeIcons.minus,
-              info: '$windSpeed',
-            ),
           ],
         ),
       ),
