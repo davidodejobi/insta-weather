@@ -5,8 +5,8 @@ import 'bottom_scrolling_card.dart';
 import 'constants.dart';
 
 class InfoScrollable extends StatelessWidget {
-  final int minTemp;
-  final int maxTemp;
+  final double minTemp;
+  final double maxTemp;
   final int feelsLike;
   final int humidity;
   final int windSpeed;

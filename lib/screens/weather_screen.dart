@@ -10,8 +10,8 @@ class WeatherScreen extends StatelessWidget {
   final String weatherType;
   final String icon;
   final int widgetCondition;
-  final int minTemp;
-  final int maxTemp;
+  final double minTemp;
+  final double maxTemp;
   final int humidity;
   final int feelsLike;
   final int windSpeed;

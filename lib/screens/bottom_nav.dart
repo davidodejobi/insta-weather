@@ -27,8 +27,8 @@ class _BottomNavControlState extends State<BottomNavControl> {
   late String cityName;
   late int tempFeel;
   late int windySpeed;
-  late int tempMin;
-  late int tempMax;
+  late double temperatureMin;
+  late double temperatureMax;
   late String weatherType;
   late int humidity;
   late int condition;
@@ -53,10 +53,10 @@ class _BottomNavControlState extends State<BottomNavControl> {
     double windSpeed = weatherData['wind']['speed'];
     windySpeed = windSpeed.toInt();
     humidity = weatherData['main']['humidity'];
-    double temperatureMin = weatherData['main']['temp_min'];
-    tempMin = temperatureMin.toInt();
-    double temperatureMax = weatherData['main']['temp_max'];
-    tempMax = temperatureMax.toInt();
+    temperatureMin = weatherData['main']['temp_min'];
+    // tempMin = temperatureMin.toInt();
+    temperatureMax = weatherData['main']['temp_max'];
+    // tempMax = temperatureMax.toInt();
     weatherType = weatherData['weather'][0]['main'];
 
     print(cityName);
@@ -71,8 +71,8 @@ class _BottomNavControlState extends State<BottomNavControl> {
         windSpeed: windySpeed,
         humidity: humidity,
         feelsLike: tempFeel,
-        minTemp: tempMin,
-        maxTemp: tempMax,
+        minTemp: temperatureMin,
+        maxTemp: temperatureMax,
         widgetCondition: condition,
         icon: icon,
         weatherType: weatherType,
