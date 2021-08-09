@@ -7,8 +7,6 @@ import 'package:weather_daily/services/weather.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:weather_daily/utilities/constants.dart';
 
-import 'customisation.dart';
-
 class BottomNavControl extends StatefulWidget {
   final locationWeather;
 
@@ -58,15 +56,10 @@ class _BottomNavControlState extends State<BottomNavControl> {
     temperatureMax = weatherData['main']['temp_max'];
     // tempMax = temperatureMax.toInt();
     weatherType = weatherData['weather'][0]['main'];
-
-    print(cityName);
-    print(condition);
-    print(cityName);
   }
 
   List<Widget> _buildScreens() {
     return [
-      WeatherTipScreen(),
       WeatherScreen(
         windSpeed: windySpeed,
         humidity: humidity,
@@ -79,39 +72,29 @@ class _BottomNavControlState extends State<BottomNavControl> {
         temp: temp,
         text: cityName,
       ),
-      Customization()
+      WeatherTipScreen(),
     ];
   }
 
   PersistentTabController _controller = PersistentTabController(
-    initialIndex: 1,
+    initialIndex: 0,
   );
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
         icon: FaIcon(
-          FontAwesomeIcons.water,
+          FontAwesomeIcons.temperatureLow,
           size: 23,
         ),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: FaIcon(
-          FontAwesomeIcons.temperatureLow,
+          FontAwesomeIcons.water,
           size: 25,
         ),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: FaIcon(
-          FontAwesomeIcons.cog,
-          size: 25,
-        ),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        activeColorPrimary: CupertinoColors.systemGrey,
       ),
     ];
   }

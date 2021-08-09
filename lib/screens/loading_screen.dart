@@ -11,6 +11,9 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   late VideoPlayerController _controller;
 
+  String? valueText;
+  String? cityName;
+
   @override
   void initState() {
     super.initState();
@@ -38,6 +41,61 @@ class _LoadingScreenState extends State<LoadingScreen> {
     }));
   }
 
+  Future<void> _displayTextInputDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Weather For Another City'),
+            content: TextField(
+              onEditingComplete: () {},
+              cursorColor: Colors.white,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(color: Colors.white),
+                ),
+                labelText: 'Search City',
+                labelStyle: TextStyle(color: Colors.amber),
+                fillColor: Colors.grey.shade900,
+                filled: true,
+              ),
+              onChanged: (value) {
+                valueText = value;
+                // return cityName;
+              },
+            ),
+            actions: <Widget>[
+              FlatButton(
+                color: Colors.red,
+                textColor: Colors.white,
+                child: Text('CANCEL'),
+                onPressed: () {
+                  setState(() {
+                    Navigator.pop(context);
+                  });
+                },
+              ),
+              FlatButton(
+                color: Colors.green,
+                textColor: Colors.white,
+                child: Text('OK'),
+                onPressed: () {
+                  setState(() {
+                    cityName = valueText;
+                    Navigator.pop(context);
+                  });
+                  // return cityName;
+                },
+              ),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,11 +112,23 @@ class _LoadingScreenState extends State<LoadingScreen> {
             ),
           ),
           Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  getData();
-                },
-                child: Text('Get Weather')),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    getData();
+                  },
+                  child: Text('Get current city weather'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    _displayTextInputDialog(context);
+                  },
+                  child: Text('Get for another city'),
+                ),
+              ],
+            ),
           )
         ],
       ),

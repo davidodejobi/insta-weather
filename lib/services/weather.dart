@@ -7,6 +7,13 @@ class WeatherModel {
   Future<dynamic> getWeatherData() async {
     Location location = Location();
 
+    // String cityUrl =
+    //     "https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric";
+    //
+    // NetworkHelper cityNetworkHelper = NetworkHelper(cityUrl);
+    //
+    // var cityWeatherData = cityNetworkHelper.getData();
+
     await location.getCurrentLocation();
     // latitude = location.latitude;
     // longitude = location.longitude;
@@ -36,18 +43,6 @@ class WeatherModel {
       return '☁️';
     } else {
       return '🤷‍';
-    }
-  }
-
-  String getMessage(int temp) {
-    if (temp > 25) {
-      return 'It\'s 🍦 time';
-    } else if (temp > 20) {
-      return 'Time for shorts and 👕';
-    } else if (temp < 10) {
-      return 'You\'ll need 🧣 and 🧤';
-    } else {
-      return 'Bring a 🧥 just in case';
     }
   }
 }

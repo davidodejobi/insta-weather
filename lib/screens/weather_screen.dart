@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_daily/utilities/Rain.dart';
+import 'package:weather_daily/utilities/constants.dart';
 import 'package:weather_daily/utilities/info_scrollable.dart';
 import 'package:weather_daily/utilities/overcast.dart';
 import 'package:weather_daily/utilities/sun.dart';
@@ -34,7 +36,7 @@ class WeatherScreen extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          flex: 3,
+          flex: 11,
           child: Stack(
             children: [
               condition(checkTemperature: widgetCondition),
@@ -91,7 +93,7 @@ class WeatherScreen extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 1,
+          flex: 3,
           child: InfoScrollable(
             windSpeed: windSpeed,
             humidity: humidity,
@@ -100,6 +102,19 @@ class WeatherScreen extends StatelessWidget {
             maxTemp: maxTemp,
           ),
         ),
+        Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              color: kScaffoldBackgroundColor,
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  FontAwesomeIcons.angleDoubleDown,
+                  color: Colors.grey,
+                ),
+              ),
+            )),
       ],
     );
   }
